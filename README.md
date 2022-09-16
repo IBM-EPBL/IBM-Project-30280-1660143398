@@ -1,5 +1,11 @@
 # IBM-Project-30280-1660143398
 Industry-specific intelligent fire management system
+Assignment done by
+JERMIN JOB M      (950819106309)
+HARINAMASIVAYAM M (950819106307)
+ABI VIGNESH P     (950819106703)
+EPHRIM HOLYSON G  (950819106705)
+
 1. If the temperature exceeds the maximum of the aforementioned "desired" range, then the LCD displays that the temperature is higher and informs the FAN to turn on.
    Then the FAN starts its rotation/vibration, and after a while the temperature gets lowered falling in the range, then the LCD commands the FAN to turn off.
 
