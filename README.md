@@ -1,4 +1,3 @@
-         <p align=”center”>
 	 Industry Specific Intelligent Fire Management System
 	
 	Team ID : PNT2022TMID29910
