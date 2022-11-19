@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "071 Sajeetha Banu S",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 120.47, "left": 23.95, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 83.81,
+      "left": 149.67,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 83.59,
+      "left": 205.45,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 112.59,
+      "left": -131.51,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -110.42, "left": -96.23, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 153.18,
+      "left": 134.8,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 150.68,
+      "left": 191.51,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 129.98,
+      "left": 323.83,
+      "attrs": { "temperature": "60.7" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -5.48, "left": 282.61, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:D5", "green", [ "v0" ] ],
+    [ "led1:C", "r1:1", "black", [ "v0" ] ],
+    [ "r1:2", "esp:GND.1", "black", [ "h-0.98", "v36.37" ] ],
+    [ "r2:1", "led2:C", "black", [ "h0" ] ],
+    [ "r2:2", "esp:GND.1", "black", [ "h-0.65", "v36.7" ] ],
+    [ "bz1:2", "esp:D13", "green", [ "v0" ] ],
+    [ "lcd1:VSS", "esp:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:RW", "esp:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:K", "esp:GND.2", "black", [ "v28.26", "h-100.54", "v218.8" ] ],
+    [ "lcd1:VDD", "esp:VIN", "red", [ "v0" ] ],
+    [ "lcd1:A", "esp:VIN", "red", [ "v15.99", "h-119.92", "v240.47" ] ],
+    [ "lcd1:E", "esp:D4", "green", [ "v96.86", "h168.05", "v124.93" ] ],
+    [ "lcd1:RS", "esp:D2", "green", [ "v91.81", "h182.5", "v103.26" ] ],
+    [ "lcd1:D4", "esp:D19", "green", [ "v70.15", "h110.66", "v102.54" ] ],
+    [ "lcd1:D5", "esp:D21", "green", [ "v79.53", "h95.39", "v78.71" ] ],
+    [ "lcd1:D6", "esp:D12", "green", [ "v52.81", "h-59.26", "v22.39" ] ],
+    [ "lcd1:D7", "esp:D14", "green", [ "v67.26", "h-60.82", "v152.37" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led2:A", "esp:D18", "green", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h-19.87", "v-58.7" ] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h-323.11", "v-59.16" ] ],
+    [ "esp:D22", "servo1:PWM", "green", [ "h6.82", "v192.94" ] ]
+  ]
+}
